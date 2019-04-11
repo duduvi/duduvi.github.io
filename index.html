@@ -312,7 +312,7 @@
 <ol>
 <li><p>5层网络模型以及每层协议有些？<br><br>应用层：HTTP、Telnet、SMTP、FTP、RIP、NFS、DNS<br><br>传输层：TCP、UDP<br><br>网络层：IP、ICMP、ARP、RARP、AKP、UUCP<br><br>数据链路层：PPP、FDDI、Ethernet、Arpanet、PDN、SLIP<br><br>物理层：IEEE 802.1A IEEE 802.2<br></p>
 </li>
-<li><p>DNS工作过程<br>DNS，全名为Domain Name System，域名系统，它是一个分布式数据库，存储域名和IP的一一对应关系，方便用户访问网络。能够将域名解析为IP（域名解析），也能将IP解析为域名（反向解析），该协议是基于UDP协议，默认端口是53。<br><br>域名空间结构：<br><br><img src="https://github.com/duduvi/IMG/blob/master/img/1.jpg" alt="域名空间结构"><br><br><br>如下图所示，展示了域名系统最为常见的结构，“.”是完全合格域名（FQDN）中最后的符号，分析域名系统是从后往左分析，“ftp.ichunqiu.com. ”，此处“.”可以当做根域，“com”是顶级域名，“ichunqiu”是二级域，“ftp”是主机名。<br><br><img src="https://github.com/duduvi/IMG/blob/master/img/2.jpg" alt="DNS结构"><br><br><br>在DNS工作过程，需要按照正向查询或者反向查询的方式进行，在正向查询过程中有递归查询和迭代查询两种方式，用户PC向本地DNS服务器的查询是递归，本地DNS服务器向其他的域名服务器（根DNS、.COM DNS等）的查询是迭代，具体的查询示意图如下。<br><br><img src="https://github.com/duduvi/IMG/blob/master/img/3.jpg" alt="正向查询原理示意图"><br><br></p>
+<li><p>DNS工作过程<br>DNS，全名为Domain Name System，域名系统，它是一个分布式数据库，存储域名和IP的一一对应关系，方便用户访问网络。能够将域名解析为IP（域名解析），也能将IP解析为域名（反向解析），该协议是基于UDP协议，默认端口是53。<br><br>域名空间结构：<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/1.jpg" alt="域名空间结构"><br><br><br>如下图所示，展示了域名系统最为常见的结构，“.”是完全合格域名（FQDN）中最后的符号，分析域名系统是从后往左分析，“ftp.ichunqiu.com. ”，此处“.”可以当做根域，“com”是顶级域名，“ichunqiu”是二级域，“ftp”是主机名。<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/2.jpg" alt="DNS结构"><br><br><br>在DNS工作过程，需要按照正向查询或者反向查询的方式进行，在正向查询过程中有递归查询和迭代查询两种方式，用户PC向本地DNS服务器的查询是递归，本地DNS服务器向其他的域名服务器（根DNS、.COM DNS等）的查询是迭代，具体的查询示意图如下。<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/3.jpg" alt="正向查询原理示意图"><br><br></p>
 </li>
 <li><p>端口<br><br>http端口：80<br><br>DNS端口：53<br><br>SSH端口：22<br><br>FTP端口：21<br><br>mysql端口：3306<br><br>Redis数据库端口：6379<br><br>Mssql数据库端口：1433<br></p>
 </li>
