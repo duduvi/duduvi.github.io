@@ -437,7 +437,7 @@
 </li>
 <li><p>DNS工作过程<br>DNS，全名为Domain Name System，域名系统，它是一个分布式数据库，存储域名和IP的一一对应关系，方便用户访问网络。能够将域名解析为IP（域名解析），也能将IP解析为域名（反向解析），该协议是基于UDP协议，默认端口是53。<br><br>域名空间结构：<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/1.jpg" alt="域名空间结构"><br><br><br>如下图所示，展示了域名系统最为常见的结构，“.”是完全合格域名（FQDN）中最后的符号，分析域名系统是从后往左分析，“ftp.ichunqiu.com. ”，此处“.”可以当做根域，“com”是顶级域名，“ichunqiu”是二级域，“ftp”是主机名。<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/2.jpg" alt="DNS结构"><br><br><br>在DNS工作过程，需要按照正向查询或者反向查询的方式进行，在正向查询过程中有递归查询和迭代查询两种方式，用户PC向本地DNS服务器的查询是递归，本地DNS服务器向其他的域名服务器（根DNS、.COM DNS等）的查询是迭代，具体的查询示意图如下。<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/3.jpg" alt="正向查询原理示意图"><br><br></p>
 </li>
-<li><p>端口<br><br>http端口：80<br><br>DNS端口：53<br><br>SSH端口：22<br><br>FTP端口：21<br><br>mysql端口：3306<br><br>Redis数据库端口：6379<br><br>Mssql数据库端口：1433<br></p>
+<li><p>端口<br><br>http端口：80<br><br>DNS端口：53<br><br>SSH端口：22<br><br>FTP端口：20,21<br><br>mysql端口：3306<br><br>Redis数据库端口：6379<br><br>Mssql数据库端口：1433<br></p>
 </li>
 <li><p>操作系统有哪些<br>两大类：类Unix和Windows<br><br>类Unix系统：<br></p>
 <ul>
@@ -453,9 +453,17 @@
 <li>仅主机模式：虚拟机选择仅主机模式后会自动获取IP，该IP在虚拟网络编辑器中可以设置，无法连接外网，选择仅主机模式的虚拟机之间能够相互ping通，这样的虚拟机只能ping通宿主机的VMnet1这个网卡<br></li>
 </ul>
 </li>
-<li><p>Windows命令：<br><br>查看系统任务列表：<br><br>获取系统详细信息：<br><br>创建文件并往文件中写数据：<br><br>读文件：<br><br>创建用户test，并添加管理组：<br></p>
+<li><p>Windows命令：<br><br>查看系统任务列表：tasklist <br><br>获取系统详细信息：systeminfo<br><br>创建文件并往文件中写数据：echo 123 &gt; test.txt<br><br>读文件：type test.txt<br><br>创建用户test，并添加管理组：net user test 123 /add  net localgroup test /add<br></p>
 </li>
-<li><p>Linux命令：<br><br>系统重启命令：<br><br>显示所有文件的详细信息：<br><br> 创建软链接：<br><br> 查看当前工作目录：<br><br> 切换到root家目录：<br><br> 查看IP配置信息：<br><br> centos的网卡配置文件在哪里：<br><br> 读物文件ichunqiu.txt 前20行文件：<br><br> 将文件pen.koo改名字为pen.ook：<br><br> 在linux的/var/www/下找到名字以hacker开头的文件：<br><br> 在centos7中关闭防火墙的三种方法：<br><br> vim编辑器的三种模式：<br><br> 在VIM中将当前行中所有的key1替换成key2：<br><br> 权限710是什么意思：<br><br> 将权限为651修改为511：<br><br> 添加用户user指定用户ID为200、组为demo_group、解析器为/bin/bash：<br><br> 源码安装的过程：<br></p>
+<li><p>Linux命令：<br><br>系统重启命令：reboot<br><br><br>显示所有文件的详细信息：ls -al<br><br><br> 创建软链接：ln -s 源文件 目标文件<br><br><br> 查看当前工作目录：pwd<br><br><br> 切换到root家目录：cd ~<br><br><br> 查看IP配置信息：ifconfig<br><br><br> centos的网卡配置文件在哪里：跟目录下/etc/sysconfig/network-scripts/<br><br><br> 读物文件ichunqiu.txt 前20行文件：head -n 20 ichunqiu.txt<br><br><br> 将文件pen.koo改名字为pen.ook：mv pen.koo pen.ook<br><br><br> 在linux的/var/www/下找到名字以hacker开头的文件：find /var/www/ hacker<br><br><br> 在centos7中关闭防火墙的三种方法：service firewalld stop<br><br><br> vim编辑器的三种模式：<br><br></p>
+<ul>
+<li>命令模式：打开一个文件就是命令，输入：q 是退出 输入  ：wq 是保存退出  :w 保存<br><br></li>
+<li>输入模式：可以写入数据的模式，这种模式的进入方法：i(在光标的位置输入) a(光标后一位输入) o(另起一行输入) I A O,退出来摁  ESC 键<br><br></li>
+<li>底部命令模式：通过底部命令去控制文档。需要在命令模式下输入：即可进入该模式<pre><code>set nu 设置行号
+set nonu 取消行号&lt;br&gt;&lt;br&gt;
+</code></pre></li>
+</ul>
+<p>在VIM中将当前行中所有的key1替换成key2：<br><br><br>：%s/key1/key2 所有的文档每行第一次出现的key1替换成key2<br><br><br> ：%s/key1/key2/g  所有的key1替换成key2<br><br> 权限710是什么意思：<br><br><br>当前文件所有者有可读可写可操作权限<br><br><br>当前文件所属组有可执行权限 <br><br><br>其他人对该文件的权限是不可读不可写不可执行<br><br><br> 将权限为651修改为511：<br><br><br>当前文件所有者权限从可读可写变成可读可执行<br><br><br>当前文件所属者权限从可读可执行变成可执行<br><br><br>其他人对该文件的权限没变，都只有可执行权限。<br><br><br> 添加用户user指定用户ID为200、组为demo_group、解析器为/bin/bash：useradd -u 200 -g demo_group -s /bin/bash user <br><br><br> 源码安装的过程：<br><br>step 1:下载redis的源码，然后解压缩 tar -zxvf redis.tar.gz<br><br>step 2:cd 切换进入该文件夹，<br><br>step 3:./configure –prefix=/usr/local/redis[可选]<br><br>step 4 :make 编译<br><br>step 5 :make install 安装软件<br></p>
 </li>
 </ol>
 
