@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="ViVilove">
 <meta property="og:description" content="sql注入知识点总结 sql注入我个人觉得有点难，不能太冒进，应该一步一步来。先把？id=1是什么意思搞懂再说，哈哈  什么是SQL注入？原理：就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。具体来说，它是利用现有应用程序，将（恶意）的SQL命令注入到后台数据库引擎执行的能力，它可以通过在Web表单中输入（恶意）SQL语句得到一个存">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-11T14:05:55.758Z">
+<meta property="og:updated_time" content="2019-04-17T09:41:43.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql注入知识点">
 <meta name="twitter:description" content="sql注入知识点总结 sql注入我个人觉得有点难，不能太冒进，应该一步一步来。先把？id=1是什么意思搞懂再说，哈哈  什么是SQL注入？原理：就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。具体来说，它是利用现有应用程序，将（恶意）的SQL命令注入到后台数据库引擎执行的能力，它可以通过在Web表单中输入（恶意）SQL语句得到一个存">
@@ -306,6 +306,12 @@
 <p>sql注入我个人觉得有点难，不能太冒进，应该一步一步来。先把？id=1是什么意思搞懂再说，哈哈</p>
 </blockquote>
 <h4 id="什么是SQL注入？"><a href="#什么是SQL注入？" class="headerlink" title="什么是SQL注入？"></a>什么是SQL注入？</h4><p>原理：就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。<br><br>具体来说，它是利用现有应用程序，将（恶意）的SQL命令注入到后台数据库引擎执行的能力，它可以通过在Web表单中输入（恶意）SQL语句得到一个存在安全漏洞的网站上的数据库，而不是按照设计者意图去执行SQL语句。<br></p>
+<h4 id="sql注入类型"><a href="#sql注入类型" class="headerlink" title="sql注入类型"></a>sql注入类型</h4><h5 id="按照注入点类型来分类"><a href="#按照注入点类型来分类" class="headerlink" title="按照注入点类型来分类"></a>按照注入点类型来分类</h5><ol>
+<li><p>数字型注入点<br><br>许多网页链接有类似的结构 <a href="http://xxx.com/users.php?id=1" target="_blank" rel="noopener">http://xxx.com/users.php?id=1</a> 基于此种形式的注入，一般被叫做数字型注入点，缘由是其注入点 id 类型为数字，在大多数的网页中，诸如 查看用户个人信息，查看文章等，大都会使用这种形式的结构传递id等信息，交给后端，查询出数据库中对应的信息，返回给前台。这一类的 SQL 语句原型大概为select <em> from 表名 where id=1 若存在注入，我们可以构造出类似与如下的sql注入语句进行爆破：select </em> from 表名 where id=1 and 1=1</p>
+</li>
+<li><p>字符型注入点<br><br>网页链接有类似的结构 <a href="http://xxx.com/users.php?name=admin" target="_blank" rel="noopener">http://xxx.com/users.php?name=admin</a> 这种形式，其注入点 name 类型为字符类型，所以叫字符型注入点。这一类的 SQL 语句原型大概为 select <em> from 表名 where name=’admin’ 值得注意的是这里相比于数字型注入类型的sql语句原型多了引号，可以是单引号或者是双引号。若存在注入，我们可以构造出类似与如下的sql注入语句进行爆破：select </em> from 表名 where name=’admin’ and 1=1 ‘ 我们需要将这些烦人的引号给处理掉。</p>
+</li>
+</ol>
 
       
     </div>
@@ -339,6 +345,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/15/decksfx/" rel="prev" title="第二次考试">
+                第二次考试 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -415,7 +425,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -459,7 +469,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#sql注入知识点总结"><span class="nav-number">1.</span> <span class="nav-text">sql注入知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是SQL注入？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是SQL注入？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#sql注入知识点总结"><span class="nav-number">1.</span> <span class="nav-text">sql注入知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是SQL注入？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是SQL注入？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sql注入类型"><span class="nav-number">1.2.</span> <span class="nav-text">sql注入类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#按照注入点类型来分类"><span class="nav-number">1.2.1.</span> <span class="nav-text">按照注入点类型来分类</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
