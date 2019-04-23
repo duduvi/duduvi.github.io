@@ -96,7 +96,7 @@
 <meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/9.jpg">
 <meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/10.jpg">
 <meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/4.jpg">
-<meta property="og:updated_time" content="2019-04-22T13:59:22.387Z">
+<meta property="og:updated_time" content="2019-04-23T07:37:04.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html学习笔记">
 <meta name="twitter:description" content="HTML 在这个世界上，从来没有真正的绝境，有的只有绝望的思维，只要心灵不曾干涸，再荒凉的土地，也会变成生机勃勃的绿洲。  HTML的简介 什么是HTML？HTML是用来描述网页的一种语言。(因为这个是用markdown写的，所以为了能让HTML元素可以显示，我所有的元素都空了一格)  HTML指的是超文本标记语言：Hyper Text Markup Language HTML 不是一种编程语言，">
@@ -373,12 +373,24 @@
 </li>
 <li><p>嵌套的HTML元素<br><br>HTML文档由嵌套的HTML元素构成</p>
 </li>
-<li><p>实例<br><img src="https://github.com/duduvi/IMG/raw/master/img/4.jpg" alt="实例"><br><br>以上实例包含七个HTML元素</p>
+<li><p>实例<br><img src="https://github.com/duduvi/IMG/raw/master/img/4.jpg" alt="实例"><br><br>以上实例包含六个HTML元素</p>
 </li>
-<li><p>实例解析<br><br>&lt; p&gt;元素：<br><br>&lt; p&gt;我的第一个段落。&lt; /p&gt;<br><br>这个&lt; p&gt;元素定义了HTML文档中的一个段落。<br><br>这个元素拥有一个开始标签&lt; p&gt;以及一个结束标签&lt; /p&gt;<br><br>元素内容是：我的第一个段落。<br><br><br>&lt; h1&gt;元素：<br><br>&lt; h1&gt;我的第一个标题。&lt; /h1&gt;<br><br>这个&lt; h1&gt;元素定义了HTML文档中的一级标题。<br><br>这个元素拥有一个开始标签&lt; h1&gt;以及一个结束标签&lt; /h1&gt;<br><br>元素内容是：我的第一个标题。<br><br><br>&lt; body&gt;元素：<br><br>&lt; body&gt;<br><br>   &lt; h1&gt;我的第一个标题&lt; /h1&gt;<br><br>   &lt; p&gt;我的第一个段落。&lt; /p&gt;<br><br>&lt; /body&gt;<br><br>&lt; body&gt;元素定义了HTML文档的主体。<br><br>这个元素拥有一个开始标签&lt; body&gt;以及一个结束标签&lt; /body&gt;。<br><br>元素内容是h1和p元素。<br><br></p>
+<li><p>实例解析<br><br>&lt; p&gt;元素：<br><br>&lt; p&gt;我的第一个段落。&lt; /p&gt;<br><br>这个&lt; p&gt;元素定义了HTML文档中的一个段落。<br><br>这个元素拥有一个开始标签&lt; p&gt;以及一个结束标签&lt; /p&gt;<br><br>元素内容是：我的第一个段落。<br><br><br>&lt; h1&gt;元素：<br><br>&lt; h1&gt;我的第一个标题。&lt; /h1&gt;<br><br>这个&lt; h1&gt;元素定义了HTML文档中的一级标题。<br><br>这个元素拥有一个开始标签&lt; h1&gt;以及一个结束标签&lt; /h1&gt;<br><br>元素内容是：我的第一个标题。<br><br><br>&lt; body&gt;元素：<br><br>&lt; body&gt;<br><br>   &lt; h1&gt;我的第一个标题&lt; /h1&gt;<br><br>   &lt; p&gt;我的第一个段落。&lt; /p&gt;<br><br>&lt; /body&gt;<br><br>&lt; body&gt;元素定义了HTML文档的主体。<br><br>这个元素拥有一个开始标签&lt; body&gt;以及一个结束标签&lt; /body&gt;。<br><br>元素内容是h1和p元素。<br><br><br>&lt; html&gt;元素：<br><br>&lt; html&gt;元素定义了整个HTML文档。<br><br>这个元素拥有一个开始标签&lt; html&gt;，以及一个结束标签&lt; /html&gt;.<br>元素内容是另一个HTML元素（body元素）<br></p>
+<p>&lt; title&gt;元素：<br><br>&lt; title&gt;元素定义了整个HTML文档的标题<br><br>这个元素又有一个开始标签&lt; title&gt;以及一个结束标签&lt; /title&gt;<br><br>元素内容是：陈光辉小菜鸡</p>
+<p>&lt; head&gt;元素：<br><br>&lt; head&gt;元素定义了整个HTML文档的头部<br><br>这个元素拥有一个开始标签&lt; head&gt;以及一个结束标签&lt; /head&gt;<br><br>元素内容是另一个HTML元素（title元素）和元（meta）数据</p>
+</li>
+<li><p>HTML空元素<br><br>没有内容的HTML元素被称为空元素。空元素是在开始标签中关闭。</p>
+<ul>
+<li>&lt; br&gt;就是没有关闭标签的空元素（&lt; br&gt;标签定义换行）。</li>
+<li>在XHTML、XML以及未来版本的HTML中，所有元素都必须被关闭。</li>
+<li>在开始标签中添加斜杆，比如&lt; br/&gt;,是关闭空元素的正取方法，HTML、XHTML和XML都接受这种方式。</li>
+<li>即使&lt; br&gt;在所有浏览器中都是有效的，但使用&lt; br/&gt;其实是更长远的保障。</li>
+</ul>
+</li>
+<li><p>HTML提示：使用小写标签<br><br>HTML标签对大小写不敏感：&lt; P&gt;等同于&lt; p&gt;。许多网站都使用大写的HTML标签。<br><br>万维网联盟（W3C)在HTML4中推荐使用小写，而在未来（X）HTML版本中强制使用小写</p>
 </li>
 </ol>
-<p>未完待续。。。。。。</p>
+<p>未完待续。。。。。。  </p>
 
       
     </div>
@@ -412,6 +424,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/23/css/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -488,7 +504,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
