@@ -105,7 +105,12 @@
 <meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/32.jpg">
 <meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/33.jpg">
 <meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/34.jpg">
-<meta property="og:updated_time" content="2019-05-07T02:27:56.198Z">
+<meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/36.jpg">
+<meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/37.jpg">
+<meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/38.jpg">
+<meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/39.jpg">
+<meta property="og:image" content="https://github.com/duduvi/IMG/raw/master/img/40.jpg">
+<meta property="og:updated_time" content="2019-05-10T03:29:54.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DVWA的学习笔记">
 <meta name="twitter:description" content="DVWA 所谓的成长，就是有一天我们可以把最重要的精力，放在最重要的人和最重要的事上。  DVWA的简介DVWA（Damn Vulnerable Web Application）是一个用来进行安全脆弱性鉴定的PHP/MySQL  Web应用，旨在为安全专业人员测试自己的专业技能和工具提供合法的环境，帮助web开发者更好的理解web应用安全防范的过程。 DVWA的十个模块 Brute Force （">
@@ -379,6 +384,31 @@
 <li>当受害者正在使用自己的网站（浏览器中还保存着session值）时，访问攻击者诱惑点击的此链接，误认为是自己点击的是一个失效的url：<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/33.jpg" alt="33"></li>
 <li>实际上已经遭受了CSRF攻击，密码已经被修改为111111，我们将访问CSRF.html时的数据包抓下来：<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/34.jpg" alt="34"></li>
 </ol>
+<h4 id="File-Inclusion"><a href="#File-Inclusion" class="headerlink" title="File Inclusion"></a>File Inclusion</h4><p>File Inclusion,意思是文件包含（漏洞），是指当服务器开启allow_url_include选项时，就可以通过php的某些特性函数（include(),require()和include_once(),requsire_once()）利用url去动态包含文件，此时如果没有对文件来源进行严格审查，就会导致任意文件读取或者任意命令执行。文件包含漏洞分为本地文件包含漏洞与远程文件包含漏洞，远程文件包含漏洞是因为开启了php配置中的allow_url_fopen选项（选项开启之后，服务器允许包含一个远程文件）<br>!35](<a href="https://github.com/duduvi/IMG/raw/master/img/35.jpg" target="_blank" rel="noopener">https://github.com/duduvi/IMG/raw/master/img/35.jpg</a>)</p>
+<h5 id="Low级别-3"><a href="#Low级别-3" class="headerlink" title="Low级别"></a>Low级别</h5><h6 id="代码分析-1"><a href="#代码分析-1" class="headerlink" title="代码分析"></a>代码分析</h6><p><img src="https://github.com/duduvi/IMG/raw/master/img/36.jpg" alt="36"></p>
+<p>可以看到，服务器端对page参数没有做任何的过滤跟检查。<br><br>服务器期望用户的操作是点击下面的三个链接，服务器会包含相应的文件，并将结果返回。需要特别说明的是，服务器包含文件时，不管文件后缀是否是php，都会尝试当做php文件执行，如果文件内容确为php，则会正常执行并返回结果，如果不是，则会原封不动地打印文件内容，所以文件包含漏洞常常会导致任意文件读取与任意命令执行。</p>
+<p>点击file1.php后，显示如下：<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/37.jpg" alt="37"></p>
+<p>而现实中，恶意的攻击者是不会乖乖点击这些链接的，因此page参数是不可控的。</p>
+<h6 id="漏洞利用-2"><a href="#漏洞利用-2" class="headerlink" title="漏洞利用"></a>漏洞利用</h6><ol>
+<li>本地文件包含<br>构造url<blockquote>
+<p><a href="http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=/etc/shadow" target="_blank" rel="noopener">http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=/etc/shadow</a></p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://github.com/duduvi/IMG/raw/master/img/38.jpg" alt="38"></p>
+<p>没错，显示没有这个文件，说明服务器系统不是Linux，但同时暴露了服务器文件的绝对路径 F:/php/WWW。</p>
+<p>构造url（绝对路径）</p>
+<blockquote>
+<p><a href="http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=F:/php/WWW/DVWA-master/php.ini" target="_blank" rel="noopener">http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=F:/php/WWW/DVWA-master/php.ini</a></p>
+</blockquote>
+<p>成功读取了服务器的php.ini文件</p>
+<p><img src="https://github.com/duduvi/IMG/raw/master/img/39.jpg" alt="39"></p>
+<p>构造url（相对路径）</p>
+<blockquote>
+<p><a href="http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=../../../../../../../../php/WWW/DVWA-master/php.ini" target="_blank" rel="noopener">http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=../../../../../../../../php/WWW/DVWA-master/php.ini</a></p>
+</blockquote>
+<p>加这么多../是为了保证到达服务器的C盘根目录，可以看到读取是成功的。</p>
+<p><img src="https://github.com/duduvi/IMG/raw/master/img/40.jpg" alt="40"></p>
 
       
     </div>
@@ -412,6 +442,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/10/file_inclusion/" rel="prev" title="File Inclusion">
+                File Inclusion <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -488,7 +522,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -532,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DVWA"><span class="nav-number">1.</span> <span class="nav-text">DVWA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DVWA的简介"><span class="nav-number">1.1.</span> <span class="nav-text">DVWA的简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DVWA的十个模块"><span class="nav-number">1.2.</span> <span class="nav-text">DVWA的十个模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DVWA的安全级别"><span class="nav-number">1.3.</span> <span class="nav-text">DVWA的安全级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Brute-Force-（暴力破解）"><span class="nav-number">1.4.</span> <span class="nav-text">Brute Force （暴力破解）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Low级别"><span class="nav-number">1.4.1.</span> <span class="nav-text">Low级别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#方法一：使用Burp-Suite暴力破解"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">方法一：使用Burp Suite暴力破解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#方法二：SQL注入漏洞"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">方法二：SQL注入漏洞</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Command-Injection-命令注入"><span class="nav-number">1.5.</span> <span class="nav-text">Command Injection(命令注入)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Low级别-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">Low级别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#源码分析"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#漏洞利用"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">漏洞利用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSRF"><span class="nav-number">1.6.</span> <span class="nav-text">CSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Low级别-2"><span class="nav-number">1.6.1.</span> <span class="nav-text">Low级别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#代码分析"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#漏洞利用-1"><span class="nav-number">1.6.1.2.</span> <span class="nav-text">漏洞利用</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DVWA"><span class="nav-number">1.</span> <span class="nav-text">DVWA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DVWA的简介"><span class="nav-number">1.1.</span> <span class="nav-text">DVWA的简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DVWA的十个模块"><span class="nav-number">1.2.</span> <span class="nav-text">DVWA的十个模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DVWA的安全级别"><span class="nav-number">1.3.</span> <span class="nav-text">DVWA的安全级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Brute-Force-（暴力破解）"><span class="nav-number">1.4.</span> <span class="nav-text">Brute Force （暴力破解）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Low级别"><span class="nav-number">1.4.1.</span> <span class="nav-text">Low级别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#方法一：使用Burp-Suite暴力破解"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">方法一：使用Burp Suite暴力破解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#方法二：SQL注入漏洞"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">方法二：SQL注入漏洞</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Command-Injection-命令注入"><span class="nav-number">1.5.</span> <span class="nav-text">Command Injection(命令注入)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Low级别-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">Low级别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#源码分析"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#漏洞利用"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">漏洞利用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSRF"><span class="nav-number">1.6.</span> <span class="nav-text">CSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Low级别-2"><span class="nav-number">1.6.1.</span> <span class="nav-text">Low级别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#代码分析"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#漏洞利用-1"><span class="nav-number">1.6.1.2.</span> <span class="nav-text">漏洞利用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#File-Inclusion"><span class="nav-number">1.7.</span> <span class="nav-text">File Inclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Low级别-3"><span class="nav-number">1.7.1.</span> <span class="nav-text">Low级别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#代码分析-1"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#漏洞利用-2"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">漏洞利用</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

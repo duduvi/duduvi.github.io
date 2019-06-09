@@ -235,6 +235,526 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/09/windowsjchkcydosml/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="duduvi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ViVilove">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/09/windowsjchkcydosml/" itemprop="url">windows基础黑客常用dos命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-09T18:04:35+08:00">
+                2019-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>愿你忠于自己，活的像自己，笑也笑的沉醉，走也走的潇洒</p>
+</blockquote>
+<h3 id="windows基础黑客常用dos命令"><a href="#windows基础黑客常用dos命令" class="headerlink" title="windows基础黑客常用dos命令"></a>windows基础黑客常用dos命令</h3><h4 id="系统目录"><a href="#系统目录" class="headerlink" title="系统目录"></a>系统目录</h4><ol>
+<li>windows</li>
+<li>program files</li>
+<li>用户</li>
+<li>perflogs</li>
+<li>perflogs是windows7的日志信息，如磁盘扫描 错误信息，删掉可以，但不建议删，删掉反而会降低系统速度，Perflogs是系统自动生成的。</li>
+</ol>
+<h4 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h4><ol>
+<li>服务是一种应用程序类型，它在后台运行。</li>
+<li>服务应用程序通常可以在本地和通过网络为用户提供一些功能，列如客户端/服务器应用程序、Web服务器、数据库服务器以及其他基于服务器的应用程序</li>
+<li>运行里面输入services.msc快速打开  </li>
+<li>常见服务：web服务、dns服务、dhcp服务、邮件服务、telnet服务、ssh服务、ftp服务、smb服务</li>
+<li>所有的服务都对应一个或多个端口，但端口只对应一个服务</li>
+<li>常见端口：<br><br>HTTP协议代理服务器常用端口号：80/8080/3128/8081/9080<br><br>FTP(文件传输)协议代理服务器常用端口号：21<br><br>Telnet（远程登录）协议代理服务器常用端口：23<br><br>TFTP：23<br><br>SSH（安全登录）、SCP(文件传输)、端口重定向：22<br><br>SMTP：25<br><br>TOMCAT：8080<br><br>WIN2003远程登录，默认的端口号为：3389<br><br>MS SQL SERVER数据库：1433</li>
+</ol>
+<h4 id="黑客通过端口可以干什么？"><a href="#黑客通过端口可以干什么？" class="headerlink" title="黑客通过端口可以干什么？"></a>黑客通过端口可以干什么？</h4><ol>
+<li>信息搜集</li>
+<li>目标探测</li>
+<li>服务判断</li>
+<li>系统判断  </li>
+<li>系统角色分析</li>
+</ol>
+<h4 id="注册表的作用"><a href="#注册表的作用" class="headerlink" title="注册表的作用"></a>注册表的作用</h4><ol>
+<li>注册表是windows操作系统中的一个核心数据库，其中存放着各种参数，直接控制着windows的启动、硬件驱动程序的装载以及一些windows应用程序的运行，从而在整个系统中起着核心作用。这些作用包括了软、硬件的相关配置和状态信息，比如注册表中保存有应用程序和资源管理器外壳的初始条件、首选项和卸载数据等，联网计算机的整个系统的设置和各种许可，文件扩展名与应用程序的关联，硬件部件的描述、状态、和属性，性能记录和其他底层的系统状态信息，以及其他数据等。</li>
+<li>运行里面输入regedit快速打开</li>
+<li>注册表结构<ul>
+<li>HKEY_CLASSES_ROOT 管理文件系统。</li>
+<li>HKEY_CURRENT_USER 管理系统当前的用户信息。</li>
+<li>HKEY_LOCAL_MACHINE 管理当前系统硬件配置。 这个跟键里面的许多子键与System.ini文件中设置项类似。</li>
+<li>HKEY_USERS 管理系统的用户信息</li>
+<li>HKEY_CURRENT_CONFIG 管理当前用户的系统配置。</li>
+</ul>
+</li>
+</ol>
+<h4 id="黑客常用的DOS命令"><a href="#黑客常用的DOS命令" class="headerlink" title="黑客常用的DOS命令"></a>黑客常用的DOS命令</h4><ol>
+<li>color 改变cmd颜色</li>
+<li>ping -t -l 65550 ip 死亡之ping（发送大于64k的文件并一直ping死亡之ping）</li>
+<li>ipconfig 查看ip</li>
+<li>ipconfig /release 释放ip</li>
+<li>ipconfig /renew 重新获得ip</li>
+<li>systeminfo 查看系统信息</li>
+<li>arp -a</li>
+<li>net view 查看局域网内其他计算机名称</li>
+<li>shutdown -s -t 180 -c “你被黑了，系统马上关机”</li>
+<li>shutdown -a 取消</li>
+<li>dir 查看目录</li>
+<li>cd 切换目录</li>
+<li>start <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 打开网页</li>
+<li>start 123.txt 打开123.txt</li>
+<li>copy con c:\123.txt 创建123.txt文件<br><br>hello baidu<br><br>ctrl+z 回车<br></li>
+<li>md 目录名 创建目录名</li>
+<li>rd 123 删除文件夹</li>
+<li>ren 原文件名 新文件名 重命名文件名</li>
+<li>del 删除文件</li>
+<li>copy 复制文件</li>
+<li>move 移动文件</li>
+</ol>
+<p>未完待续。。。。。。。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/06/stcsjc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="duduvi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ViVilove">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/06/stcsjc/" itemprop="url">渗透测试基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T15:50:02+08:00">
+                2019-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="渗透测试基础"><a href="#渗透测试基础" class="headerlink" title="渗透测试基础"></a>渗透测试基础</h3><blockquote>
+<p>不必给我安慰，何必怕我伤悲</p>
+</blockquote>
+<h4 id="常见术语介绍"><a href="#常见术语介绍" class="headerlink" title="常见术语介绍"></a>常见术语介绍</h4><ol>
+<li><p>脚本（asp、PHP、jsp）动态的网站需要用到这些动态脚本去搭建</p>
+</li>
+<li><p>html（css、js、html）搭建静态页面</p>
+</li>
+<li><p>HTTP协议 超文本传输协议</p>
+</li>
+<li><p>CMS（B/S）已经编辑好的网站，拿过来可以直接用，改一改就可以了（内容管理系统）</p>
+</li>
+<li><p>MD5（一种加密算法，是不可逆的）</p>
+</li>
+<li><p>肉鸡、抓鸡、跳板</p>
+</li>
+<li><p>一句话、小马、大马（统称为webshell网站后门）<br>webshell、提权（拿到网站权限后，想要控制整个系统就要提权，提升到系统权限）、后门</p>
+</li>
+<li><p>源码打包、脱裤（数据库脱一下）</p>
+</li>
+<li><p>嗅探、rookit</p>
+</li>
+</ol>
+<h4 id="渗透测试流程"><a href="#渗透测试流程" class="headerlink" title="渗透测试流程"></a>渗透测试流程</h4><ol>
+<li><p>明确目标</p>
+</li>
+<li><p>信息收集</p>
+</li>
+<li><p>漏洞探测</p>
+</li>
+<li><p>漏洞验证</p>
+</li>
+<li><p>编写报告</p>
+</li>
+<li><p>信息整理</p>
+</li>
+<li><p>获取所需</p>
+</li>
+<li><p>信息分析</p>
+</li>
+</ol>
+<h4 id="http响应码"><a href="#http响应码" class="headerlink" title="http响应码"></a>http响应码</h4><ol>
+<li>200：客户端请求成功，是最常见的状态。</li>
+<li>302：重定向。（访问一个网站调到另一个网站）</li>
+<li>404：请求资源不存在，是最常见的状态。（页面不存在）</li>
+<li>400：客户端请求有语法错误，不能被服务器所理解。</li>
+<li>401：请求未经授权。</li>
+<li>403：服务器收到请求，但是拒绝提供服务。（访问一些目录时经常出现）</li>
+<li>500：服务器内部错误，是最常见的状态。</li>
+<li>503：服务器当前不能处理客户端的请求，一段时间后可能恢复（用菜刀去连接shell，显示500或503说明有防护拦截掉了菜刀）</li>
+</ol>
+<h4 id="HTTP-url"><a href="#HTTP-url" class="headerlink" title="HTTP url"></a>HTTP url</h4><p>统一资源定位符（URL是一种特殊类型的URL，包含了用于查找某个资源的足够的信息）的格式如下：<br><br><a href="http://www.cgh.com:80/admin/index.php" target="_blank" rel="noopener">http://www.cgh.com:80/admin/index.php</a></p>
+<h4 id="http请求方法"><a href="#http请求方法" class="headerlink" title="http请求方法"></a>http请求方法</h4><ol>
+<li><p>GET</p>
+</li>
+<li><p>POST</p>
+</li>
+<li><p>OPTIONS</p>
+</li>
+<li><p>PUT</p>
+</li>
+<li><p>MOVE</p>
+</li>
+<li><p>DELETE</p>
+</li>
+<li><p>TRACE</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/10/file_inclusion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="duduvi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ViVilove">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/10/file_inclusion/" itemprop="url">File Inclusion</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-10T11:40:07+08:00">
+                2019-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>梦想也许今天无法实现，明天也不能。重要的是，它在你的心里。重要的是，你一直在努力。</p>
+</blockquote>
+<h3 id="Flie-Inclusion"><a href="#Flie-Inclusion" class="headerlink" title="Flie Inclusion"></a>Flie Inclusion</h3><h4 id="File-Inclusion的简介"><a href="#File-Inclusion的简介" class="headerlink" title="File Inclusion的简介"></a>File Inclusion的简介</h4><p>File Inclusion,意思是文件包含（漏洞），是指当服务器开启allow_url_include选项时，就可以通过php的某些特性函数（include(),require()和include_once(),requsire_once()）利用url去动态包含文件，此时如果没有对文件来源进行严格审查，就会导致任意文件读取或者任意命令执行。文件包含漏洞分为本地文件包含漏洞与远程文件包含漏洞，远程文件包含漏洞是因为开启了php配置中的allow_url_fopen选项（选项开启之后，服务器允许包含一个远程文件）</p>
+<h4 id="文件包含漏洞原理介绍"><a href="#文件包含漏洞原理介绍" class="headerlink" title="文件包含漏洞原理介绍"></a>文件包含漏洞原理介绍</h4><p>在通过PHP的相应函数（比如include()）引入文件时，由于传入的文件名没有经过合理的校验，从而操作了预想之外的文件，就可能导致意外的文件泄露甚至恶意的代码注入。</p>
+<p>文件包含漏洞的形成，需要满足两个条件：<br></p>
+<ul>
+<li>用户能够控制这个动态变量</li>
+<li>include()等函数通过动态变量的方式引入需要包含的文件</li>
+</ul>
+<h4 id="文件包含函数"><a href="#文件包含函数" class="headerlink" title="文件包含函数"></a>文件包含函数</h4><ol>
+<li><p>include()函数<br><br>当使用该函数包含文件时，只有代码执行到include()函数时才将文件包含进来，发生错误时只给出一个警告，继续向下执行。</p>
+</li>
+<li><p>include_once():函数<br>功能和include()相同，区别在于当重复调用同一文件时，程序只调用一次。</p>
+</li>
+<li><p>require()函数<br>require()与include的区别在于require()执行如果发生错误，函数会输出错误信息，并终止脚本的运行。使用require()函数包含文件时，只要程序一执行，立即调用文件，而include()只有程序执行到该函数时才调用。</p>
+</li>
+<li><p>requsire_once()函数<br>它的功能与require()相同，区别在于当重复调用同一文件时，程序只调用一次。</p>
+</li>
+</ol>
+<h4 id="文件包含漏洞原理介绍-1"><a href="#文件包含漏洞原理介绍-1" class="headerlink" title="文件包含漏洞原理介绍"></a>文件包含漏洞原理介绍</h4><ol>
+<li><p>本地文件包含(LFI)<br><br>能够读取或执行包含本地文件的漏洞，称为本地文件包含漏洞。<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/41.jpg" alt="41"></p>
+</li>
+<li><p>远程文件包含(RFI)<br><br>如果php.ini的配置选项allow_url_fopen,allow_url_include为ON的话，文件包含函数是可以加载远程文件的，这种漏洞被称为远程文件包含漏洞。利用远程文件包含漏洞，可以直接执行任意命令。<br><br>allow_url_include是否允许引用URL文件<br><br>allow_url_fopen  是否允许打开URL文件</p>
+</li>
+</ol>
+<h4 id="文件包含漏洞危害"><a href="#文件包含漏洞危害" class="headerlink" title="文件包含漏洞危害"></a>文件包含漏洞危害</h4><ul>
+<li>敏感信息泄露</li>
+<li>获取Webshell</li>
+<li>任意命令执行</li>
+</ul>
+<h4 id="包含日志文件"><a href="#包含日志文件" class="headerlink" title="包含日志文件"></a>包含日志文件</h4><p>web服务器，基本上把请求写入到他的日志文件中，有的是access.log,有的是error.log,所以，我们可以尝试，写一些奇怪的数据，例如&lt;?php eval($_POST[‘cmd’])?&gt;,然后呢让访问出错，这个就会被记录到日志文件中去，然后，我们利用本地包含，去包含这个日志文件，相当于我们得到了一个shell。</p>
+<p>可以在url里面写入shell数据，也可以在referer或者ua中写入，但是，这个写入尽量要使用抓包工具，例如burp来写入，因为浏览器，会给我们转码。造成包含不成功。</p>
+<p>未完待续。。。。。。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/23/dvwa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -365,6 +885,31 @@
 <li>当受害者正在使用自己的网站（浏览器中还保存着session值）时，访问攻击者诱惑点击的此链接，误认为是自己点击的是一个失效的url：<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/33.jpg" alt="33"></li>
 <li>实际上已经遭受了CSRF攻击，密码已经被修改为111111，我们将访问CSRF.html时的数据包抓下来：<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/34.jpg" alt="34"></li>
 </ol>
+<h4 id="File-Inclusion"><a href="#File-Inclusion" class="headerlink" title="File Inclusion"></a>File Inclusion</h4><p>File Inclusion,意思是文件包含（漏洞），是指当服务器开启allow_url_include选项时，就可以通过php的某些特性函数（include(),require()和include_once(),requsire_once()）利用url去动态包含文件，此时如果没有对文件来源进行严格审查，就会导致任意文件读取或者任意命令执行。文件包含漏洞分为本地文件包含漏洞与远程文件包含漏洞，远程文件包含漏洞是因为开启了php配置中的allow_url_fopen选项（选项开启之后，服务器允许包含一个远程文件）<br>!35](<a href="https://github.com/duduvi/IMG/raw/master/img/35.jpg" target="_blank" rel="noopener">https://github.com/duduvi/IMG/raw/master/img/35.jpg</a>)</p>
+<h5 id="Low级别-3"><a href="#Low级别-3" class="headerlink" title="Low级别"></a>Low级别</h5><h6 id="代码分析-1"><a href="#代码分析-1" class="headerlink" title="代码分析"></a>代码分析</h6><p><img src="https://github.com/duduvi/IMG/raw/master/img/36.jpg" alt="36"></p>
+<p>可以看到，服务器端对page参数没有做任何的过滤跟检查。<br><br>服务器期望用户的操作是点击下面的三个链接，服务器会包含相应的文件，并将结果返回。需要特别说明的是，服务器包含文件时，不管文件后缀是否是php，都会尝试当做php文件执行，如果文件内容确为php，则会正常执行并返回结果，如果不是，则会原封不动地打印文件内容，所以文件包含漏洞常常会导致任意文件读取与任意命令执行。</p>
+<p>点击file1.php后，显示如下：<br><br><img src="https://github.com/duduvi/IMG/raw/master/img/37.jpg" alt="37"></p>
+<p>而现实中，恶意的攻击者是不会乖乖点击这些链接的，因此page参数是不可控的。</p>
+<h6 id="漏洞利用-2"><a href="#漏洞利用-2" class="headerlink" title="漏洞利用"></a>漏洞利用</h6><ol>
+<li>本地文件包含<br>构造url<blockquote>
+<p><a href="http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=/etc/shadow" target="_blank" rel="noopener">http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=/etc/shadow</a></p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://github.com/duduvi/IMG/raw/master/img/38.jpg" alt="38"></p>
+<p>没错，显示没有这个文件，说明服务器系统不是Linux，但同时暴露了服务器文件的绝对路径 F:/php/WWW。</p>
+<p>构造url（绝对路径）</p>
+<blockquote>
+<p><a href="http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=F:/php/WWW/DVWA-master/php.ini" target="_blank" rel="noopener">http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=F:/php/WWW/DVWA-master/php.ini</a></p>
+</blockquote>
+<p>成功读取了服务器的php.ini文件</p>
+<p><img src="https://github.com/duduvi/IMG/raw/master/img/39.jpg" alt="39"></p>
+<p>构造url（相对路径）</p>
+<blockquote>
+<p><a href="http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=../../../../../../../../php/WWW/DVWA-master/php.ini" target="_blank" rel="noopener">http://127.0.0.1/DVWA-master/vulnerabilities/fi/?page=../../../../../../../../php/WWW/DVWA-master/php.ini</a></p>
+</blockquote>
+<p>加这么多../是为了保证到达服务器的C盘根目录，可以看到读取是成功的。</p>
+<p><img src="https://github.com/duduvi/IMG/raw/master/img/40.jpg" alt="40"></p>
 
           
         
@@ -750,130 +1295,14 @@
 </blockquote>
 <h4 id="Burp-Suite的简介"><a href="#Burp-Suite的简介" class="headerlink" title="Burp Suite的简介"></a>Burp Suite的简介</h4><p>Burp Suite是用于攻击web应用程序的集成平台。它包含了许多工具，并为这些工具设计了许多接口，以促进加快攻击应用程序的过程。所有的工具都共享一个能处理并显示HTTP信息，持久性，认证，代理，日志，警报的一个强大的可扩展的框架。</p>
 <h4 id="Burp-Suite代理和浏览器设置"><a href="#Burp-Suite代理和浏览器设置" class="headerlink" title="Burp Suite代理和浏览器设置"></a>Burp Suite代理和浏览器设置</h4><p>Burp Suite代理工具是以拦截代理的方式，拦截所有通过代理的网络流量，如客户端的请求数据、服务器端的返回信息等。Burp Suite主要拦截http和https协议的流量，通过拦截，Burp Suite以中间人的方式，可以对客户端请求数据、服务器返回做各种处理，以达到安全评估测试的目的。<br><br>在日常工作中，我们最常用的web客户端就是web浏览器，我们可以通过代理的设置，做到对web浏览器的流量拦截，并对经过Burp Suite代理的流量数据进行处理。</p>
-<p>未完待续。。。。。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/23/css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="duduvi">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ViVilove">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/23/css/" itemprop="url">CSS学习笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-23T15:38:14+08:00">
-                2019-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><blockquote>
-<p>九十九次的理论不如一次的行动来得实际。</p>
-</blockquote>
-<h4 id="CSS的简介"><a href="#CSS的简介" class="headerlink" title="CSS的简介"></a>CSS的简介</h4><p>未完待续。。。。。。</p>
+<h5 id="FireFox浏览器设置"><a href="#FireFox浏览器设置" class="headerlink" title="FireFox浏览器设置"></a>FireFox浏览器设置</h5><ol>
+<li><p>启动FireFox浏览器，点击【工具】菜单，点击【选项】。<br><br><img src alt="42"></p>
+</li>
+<li><p>在新打开的about：preferences#advanced窗口中，依次点击【高级】-【网络】，我们将会看到FireFox连接网络的设置选项。<br><br><img src alt="43"></p>
+</li>
+<li><p>点击【设置】，在弹出的【连接设置】对话框中，找到“http代理”，填写127.0.0.1，端口填写8080，最后点击【确认】保存参数设置，完成FireFox的代理配置。<br><br><img src alt="44"></p>
+</li>
+</ol>
 
           
         
@@ -997,6 +1426,129 @@
 <p>人性最可怜的就是：我们总是梦想着天边的一座奇妙的玫瑰园，而不去欣赏今天就开在我们窗口的玫瑰。</p>
 </blockquote>
 <h4 id="JavaScript的简介"><a href="#JavaScript的简介" class="headerlink" title="JavaScript的简介"></a>JavaScript的简介</h4><p>未完待续。。。。。。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/23/css/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="duduvi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ViVilove">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/23/css/" itemprop="url">CSS学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-23T15:38:14+08:00">
+                2019-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><blockquote>
+<p>九十九次的理论不如一次的行动来得实际。</p>
+</blockquote>
+<h4 id="CSS的简介"><a href="#CSS的简介" class="headerlink" title="CSS的简介"></a>CSS的简介</h4><p>未完待续。。。。。。</p>
 
           
         
@@ -1258,479 +1810,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/lamp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="duduvi">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ViVilove">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/18/lamp/" itemprop="url">LAMP介绍</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-18T21:11:03+08:00">
-                2019-04-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="LAMP"><a href="#LAMP" class="headerlink" title="LAMP"></a>LAMP</h3><h4 id="LAMP是什么？"><a href="#LAMP是什么？" class="headerlink" title="LAMP是什么？"></a>LAMP是什么？</h4><p>LAMP指的Linux（操作系统）、Apache（HTTP 服务器），MySQL（数据库软件） 和PHP（有时也是指Perl或Python） 的第一个字母，一般用来建立web 服务器。</p>
-<h4 id="Apache介绍？"><a href="#Apache介绍？" class="headerlink" title="Apache介绍？"></a>Apache介绍？</h4><ol>
-<li>Apache是什么？<br><br>Apache是世界使用排名第一的Web服务器软件。它可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是最流行的Web服务器端软件之一。它快速、可靠并且可通过简单的API扩充，将Perl/Python等解释器编译到服务器中。</li>
-<li><p>解释一下什么是web服务器<br><br>想知道什么是Web服务器？一个网络服务器就像一个餐厅主机。当您抵达餐厅时，主人会问候您，检查您的预订信息并带您到餐桌。与餐厅主机类似，Web服务器会检查您请求的网页并提取它以供您查看。但是，Web服务器不仅是您的主机，还是您的服务器。一旦找到您请求的网页，它也会为您提供网页。像Apache这样的网络服务器也是餐厅的Maitre D’。它处理您与网站（厨房）的通信，处理您的请求，确保其他员工（模块）随时准备为您服务。它也是公交车的男孩，因为它清理表（内存，缓存，模块）并为新客户清除它们。</p>
-<p>所以基本上，Web服务器是接收您访问网页请求的软件。它会对您的HTTP请求运行一些安全检查，并将您带到网页。根据您请求的页面，页面可能会要求服务器运行一些额外的模块，同时生成文档以便为您服务。然后它会为您提供所需的文档。非常棒的不是它。</p>
-</li>
-<li><p>Apache的特点<br><br>Apache HTTP Server（通常称为Apache）快速而安全，Apache最重要的好处是它可以免费用于个人和商业用途，因此您无需担心需要付费。</p>
-<p>Apache也是一个可靠的软件框架，并且仍然得到积极维护，因此它可以获得频繁的功能升级，安全补丁和漏洞改进。</p>
-<p>虽然Apache是一款免费且更新的产品，但它并不吝啬功能。事实上，它是功能最丰富的HTTP网络服务器之一，这是它如此受欢迎的另一个原因。</p>
-<h4 id="Mysql介绍？"><a href="#Mysql介绍？" class="headerlink" title="Mysql介绍？"></a>Mysql介绍？</h4><ol start="4">
-<li>Mysql是什么？<br></li>
-</ol>
-<p>MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件。<br></p>
-<p>MySQL是一种关系数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。<br></p>
-<p>MySQL所使用的 SQL 语言是用于访问数据库的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。<br></p>
-<p>由于其社区版的性能卓越，搭配 PHP 和 Apache 可组成良好的开发环境。</p>
-<ol start="5">
-<li>Mysql的作用<br></li>
-</ol>
-<p>Mysql是一种sql关系型数据库管理系统，用处可多了去了，基本上你只要上网、用手机都会有数据库在给你提供服务，只不过你不知道罢了<br></p>
-<p>凡是需要用数据库来存储数据的地方都可以用<br></p>
-<p>比如百度知道这种网站，要随时管理查询大量的数据，后台是要有数据库来存储所有的问题和回答的，这就需要用到数据库<br><br>现在的技术环境下，只要有网站，后台肯定就有数据库支撑<br>用于企业的应用系统，比如办公自动化系统、财务会计系统、顾客管理系统，几乎无一例外需要数据库支撑<br></p>
-<p>还有现在的智能手机，系统和很多app都是需要数据库支撑的</p>
-<h4 id="PHP介绍"><a href="#PHP介绍" class="headerlink" title="PHP介绍"></a>PHP介绍</h4><ol start="6">
-<li>什么是PHP？<br><br>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（标准通用标记语言下的一个应用）文档中去执行，执行效率比完全生成HTML标记的CGI要高许多；PHP还可以执行编译后代码，编译可以达到加密和优化代码运行，使代码运行更快。</li>
-</ol>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/15/decksfx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="duduvi">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ViVilove">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/15/decksfx/" itemprop="url">第二次考试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T13:57:15+08:00">
-                2019-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="第二次考试分析"><a href="#第二次考试分析" class="headerlink" title="第二次考试分析"></a>第二次考试分析</h3><blockquote>
-<p>已经感觉有点跟不上了，要抓紧时间把前面的知识点给补上</p>
-</blockquote>
-<h4 id="1-选择题"><a href="#1-选择题" class="headerlink" title="1.选择题"></a>1.选择题</h4><ol>
-<li><p>下面哪个Linux命令可以一次显示一页内容？（c）<br><br>A. pause<br><br>B. cat<br><br>C. more<br><br>D. grep<br><br>分析：<br>A. pause：pause不是Linux命令，是windows命令，pause  它会提示“请按任意键继续…” ，pause命令没有任何的参数，它的命令就是它的本身，当pause命令运行后，会中断执行的语句。这个中断不是立即停止，只是暂停，按下任意键之后就会继续执行下面的语句。而且应该不止可以用一次，在一个批处理命令中，可以尝试使用多个pause命令。<br><br>B. cat：由第一行开始显示文件内容<br><br>C. more：一页一页的显示文件内容<br><br>D. grep:（global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。<br></p>
-</li>
-<li><p>统计当前目录(或文件)所占磁盘空间的大小命令是：（C）<br><br>A. df /<br><br>B. du /<br><br>C. du<br><br>D. df<br><br>分析：du命令和df命令的区别：<br><br>有时我们会发现，使用 du 命令和 df 命令去统计分区的使用情况时，得到的数据是不一样的。那是因为df命令是从文件系统的角度考虑的，通过文件系统中未分配的空间来确定文件系统中已经分配的空间大小。也就是说，在使用 df 命令统计分区时，不仅要考虑文件占用的空间，还要统计被命令或程序占用的空间（最常见的就是文件已经删除，但是程序并没有释放空间）。<br><br>而 du 命令是面向文件的，只会计算文件或目录占用的磁盘空间。也就是说，df 命令统计的分区更准确，是真正的空闲空间。<br><br>du 是统计目录或文件所占磁盘空间大小的命令。</p>
-</li>
-<li><p>怎样更改一个文件的权限设置？（B）<br><br>A. attrib<br><br>B. chmod<br><br>C. change<br><br>D. file<br></p>
-</li>
-<li><p>假如您需要找出 /etc/my.conf 文件属于哪个包 (package) ，您可以执行：（C） <br><br>A. rpm -q /etc/my.conf <br><br>B. rpm -requires /etc/my.conf <br><br>C. rpm -qf /etc/my.conf <br><br>D. rpm -q | grep /etc/my.conf <br><br>分析：查看一个文件属于哪个rpm包：<br><br>rpm -qf /path/filename     </p>
-</li>
-<li><p>在使用了shadow口令的系统中，/etc/passwd和/etc/shadow两个文件的权限正确的是：（C）<br><br>A. -rw-r—– , -r——–<br><br>B. -rw-r–r– , -r–r–r–<br><br>C. -rw-r–r– , -r——–<br><br>D. -rw-r–rw- , -r—–r–<br><br>分析：为什么选c我也没搞懂，哈哈</p>
-</li>
-<li><p>下面哪个参数可以删除一个用户并同时删除用户的主目录？（C）<br><br>A. rmuser -r<br><br>B. deluser -r<br><br>C. userdel -r<br><br>D. usermgr -r<br></p>
-</li>
-<li><p>如果你的umask设置为022，缺省的你创建的文件的权限为：（D）<br><br>A. —-w–w-<br><br>B. -w–w—-<br><br>C. r-xr-x—<br><br>D. rw-r–r–<br><br>分析：D:文件默认666</p>
-</li>
-<li><p>在一条命令中如何查找一个二进制命令 Xconfigurator 的路径？（D）<br><br>A. apropos Xconfigurator <br><br>B. find Xconfigurator<br><br>C. where Xconfigurator<br><br>D. which Xconfigurator<br></p>
-</li>
-<li><p>运行一个脚本，用户不需要什么样的权限？（B）<br><br>A. read<br><br>B. write<br><br>C. execute<br><br>D. browse on the directory<br><br>分析：运行一个脚本不需要可写，D选项是浏览的意思</p>
-</li>
-<li><p>在 bash 中, 在一条命令后加入”1&gt;&amp;2” 意味着：（A）<br><br>A. 标准错误输出重定向到标准输入<br><br>B. 标准输入重定向到标准错误输出<br><br>C. 标准输出重定向到标准错误输出<br><br>D. 标准输出重定向到标准输入<br></p>
-</li>
-</ol>
-<ol start="11">
-<li><p>下面哪条命令可以把f1.txt复制为f2.txt?（C）<br><br>A. cp f1.txt | f2.txt<br><br>B. cat f1.txt | f2.txt<br><br>C. cat f1.txt &gt; f2.txt<br><br>D. copy f1.txt | f2.txt<br></p>
-</li>
-<li><p>显示一个文件最后几行的命令是：（B）<br><br>A. tac<br><br>B. tail<br><br>C. rear<br><br>D. last<br></p>
-</li>
-<li><p>使用ln命令将生成了一个指向文件old的符号链接new，如果你将文件old删除，是否还能够访问文件中的数据？（A）<br><br>A. 不可能再访问<br><br>B. 仍然可以访问<br><br>C. 能否访问取决于文件的所有者<br><br>D. 能否访问取决于文件的权限<br></p>
-</li>
-<li><p>在ps命令中什么参数是用来显示所有用户的进程的？（A）<br><br>A. a<br><br>B. b<br><br>C. u<br><br>D. x<br></p>
-</li>
-<li><p>如何显示Linux系统中注册的用户数（包含系统用户）（D）<br><br>A. account -l<br><br>B. nl /etc/passwd |head<br><br>C. wc –users /etc/passwd<br><br>D. wc –lines /etc/passwd<br></p>
-</li>
-<li><p>命令 kill 9 的含义是：（C）<br><br>A. kills the process whose PID is 9.<br><br>B. kills all processes belonging to UID 9.<br><br>C. sends SIGKILL to the process whose PID is 9.<br><br>D. sends SIGTERM to the process whose PID IS 9.<br></p>
-</li>
-<li><p>在Linux系统中的脚本文件一般以什么开头？（B）<br><br>A. $/bin/sh<br><br>B. #!/bin/sh<br><br>C. use /bin/sh<br><br>D. set shell=/bin/sh<br></p>
-</li>
-<li><p>下面哪种写法表示如果cmd1成功执行，则执行cmd2命令？（A）<br><br>A. cmd1&amp;&amp;cmd2<br><br>B. cmd1|cmd2<br><br>C. cmd1;cmd2<br><br>D. cmd1||cmd2<br><br>分析;&amp;&amp;并且的关系</p>
-</li>
-<li><p>Linux中，提供TCP/IP包过滤功能的软件叫什么？（C）<br><br>A. rarp<br><br>B. route<br><br>C. iptables<br><br>D. filter<br></p>
-</li>
-<li><p>在vi中退出不保存的命令是？（A）<br><br>A. :q<br><br>B. :w<br><br>C. :wq<br><br>D. :q!<br></p>
-</li>
-<li><p>使用什么命令检测基本网络连接？（A）<br><br>A. ping<br><br>B. route<br><br>C. netstat<br><br>D. ifconfig<br></p>
-</li>
-<li><p>下面哪个协议使用了二个以上的端口？（B）<br><br>A. telnet<br><br>B. FTP<br><br>C. ssh<br><br>D. HTTP<br><br>分析：ftp使用了20,21端口</p>
-</li>
-<li><p>如何在Debian系统中安装rpm包？（D）<br><br>A. alien pkgname.rpm<br><br>B. dpkg –rpm pkgname.rpm<br><br>C. dpkg –alien pkgname.rpm<br><br>D. alien pkganme.rpm ; dpkg -i pkganme.deb<br></p>
-</li>
-<li><p>在安装软件时下面哪一步需要root权限？（D）<br><br>A. make<br><br>B. make deps<br><br>C. make config<br><br>D. make install<br></p>
-</li>
-<li><p>对于Apache服务器，提供的子进程的缺省的用户是：（D）<br><br>A. root<br><br>B. apached<br><br>C. httpd<br><br>D. nobody<br></p>
-</li>
-<li><p>apache的主配置文件是：（A）<br><br>A. httpd.conf<br><br>B. httpd.cfg<br><br>C. access.cfg<br><br>D. apache.conf<br></p>
-</li>
-<li><p>通过Makefile来安装已编译过的代码的命令是：（D）<br><br>A. make <br><br>B. install<br><br>C. make depend<br><br>D. make install<br></p>
-</li>
-</ol>
-<p>28.什么命令解压缩tar文件？（B)<br><br>A. tar -czvf filename.tgz<br><br>B. tar -xzvf filename.tgz<br><br>C. tar -tzvf filename.tgz<br><br>D. tar -dzvf filename.tgz<br></p>
-<ol start="29">
-<li><p>命令 netstat -a 停了很长时间没有响应，这可能是哪里的问题？（B）<br><br>A. NFS.<br><br>B. DNS.  <br><br>C. NIS.<br><br>D. routing.<br></p>
-</li>
-<li><p>ping使用的协议是：（D）<br><br>A. TCP<br><br>B. UDP<br><br>C. SMB<br><br>D. ICMP<br></p>
-</li>
-<li><p>下面哪个命令不是用来查看网络故障的？（B）<br><br>A. ping <br><br>B. init<br><br>C. telnet <br><br>D. netstat<br></p>
-</li>
-<li><p>拨号上网使用的协议通常是：（A）<br><br>A. PPP<br><br>B. UUCP<br><br>C. SLIP<br><br>D. Ethernet<br></p>
-</li>
-<li><p>TCP/IP中，哪个协议是用来进行IP自动分配的？（C）<br><br>A. ARP<br><br>B. NFS<br><br>C. DHCP<br><br>D. DNS<br></p>
-</li>
-<li><p>下面哪个功能用来生成一个文件的校验码？（A）<br><br>A. md5<br><br>B. tar<br><br>C. crypt<br><br>D. md5sum<br></p>
-</li>
-<li><p>如何停止一台机器的telnet服务？（D）<br><br>A. Put NONE in /etc/telnet.allow<br><br>B. Put a line ‘ALL:ALL’ in /etc/hosts.deny<br><br>C. Comment the telnet entry in /etc/inittab<br><br>D. Comment the telnet entry in /etc/xinetd.conf<br></p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/sqlzr/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="duduvi">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ViVilove">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/11/sqlzr/" itemprop="url">sql注入知识点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-11T21:45:22+08:00">
-                2019-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="sql注入知识点总结"><a href="#sql注入知识点总结" class="headerlink" title="sql注入知识点总结"></a><center>sql注入知识点总结</center></h3><blockquote>
-<p>sql注入我个人觉得有点难，不能太冒进，应该一步一步来。先把？id=1是什么意思搞懂再说，哈哈</p>
-</blockquote>
-<h4 id="什么是SQL注入？"><a href="#什么是SQL注入？" class="headerlink" title="什么是SQL注入？"></a>什么是SQL注入？</h4><p>原理：就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。<br><br>具体来说，它是利用现有应用程序，将（恶意）的SQL命令注入到后台数据库引擎执行的能力，它可以通过在Web表单中输入（恶意）SQL语句得到一个存在安全漏洞的网站上的数据库，而不是按照设计者意图去执行SQL语句。<br></p>
-<h4 id="sql注入类型"><a href="#sql注入类型" class="headerlink" title="sql注入类型"></a>sql注入类型</h4><h5 id="按照注入点类型来分类"><a href="#按照注入点类型来分类" class="headerlink" title="按照注入点类型来分类"></a>按照注入点类型来分类</h5><ol>
-<li><p>数字型注入点<br><br>许多网页链接有类似的结构 <a href="http://xxx.com/users.php?id=1" target="_blank" rel="noopener">http://xxx.com/users.php?id=1</a> 基于此种形式的注入，一般被叫做数字型注入点，缘由是其注入点 id 类型为数字，在大多数的网页中，诸如 查看用户个人信息，查看文章等，大都会使用这种形式的结构传递id等信息，交给后端，查询出数据库中对应的信息，返回给前台。这一类的 SQL 语句原型大概为select <em> from 表名 where id=1 若存在注入，我们可以构造出类似与如下的sql注入语句进行爆破：select </em> from 表名 where id=1 and 1=1</p>
-</li>
-<li><p>字符型注入点<br><br>网页链接有类似的结构 <a href="http://xxx.com/users.php?name=admin" target="_blank" rel="noopener">http://xxx.com/users.php?name=admin</a> 这种形式，其注入点 name 类型为字符类型，所以叫字符型注入点。这一类的 SQL 语句原型大概为 select <em> from 表名 where name=’admin’ 值得注意的是这里相比于数字型注入类型的sql语句原型多了引号，可以是单引号或者是双引号。若存在注入，我们可以构造出类似与如下的sql注入语句进行爆破：select </em> from 表名 where name=’admin’ and 1=1 ‘ 我们需要将这些烦人的引号给处理掉。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1781,7 +1860,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
